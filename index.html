@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #login {
+            display: none;
+        }
+
+        #signup {
+            display: none;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 10px;
+            animation: image-slide 5s linear infinite alternate;
+        }
+
+        @keyframes image-slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(20px);
+            }
+        }
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector("#log").onclick = function() {
+                document.querySelector("#login").style.display = "block";
+                document.querySelector("#signup").style.display = "none";
+            };
+            document.querySelector("#sign").onclick = function() {
+                document.querySelector("#login").style.display = "none";
+                document.querySelector("#signup").style.display = "block";
+            };
+        });
+    </script>
+    <meta charset="UTF-8">
+    <title>LogIn</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1 style="font-size: 300%; color: #fff; text-align:center;">Welcome to Weathery</h1>
+    <div class="image-container">
+
+        <div style="display: flex; flex-direction: column; align-items: center; position:relative; margin:auto; top:0; right:0;bottom:0; left:0; ">
+            <div style="display: flex; align-items: center;">
+                <button id="log" style="margin-bottom: 10px; margin-right: 10px; flex: 2; background-color: #000000; opacity:0.5; transition: 0.2s ease-in-out; border: 1px solid #fff; color:#fff;">Log In</button>
+                <button id="sign" style="margin-bottom: 10px;  background-color: #000000; opacity:0.5; transition: 0.2s ease-in-out; border: 1px solid #fff; color:#fff;">Sign Up</button>
+            </div>
+            <div style="margin-top: 20px;"></div>
+            <div id="login" style="display: none; background-color: #000000; opacity:0.7; width:450px; height:250px; padding-top:40px;">
+                <form action="/logged">
+                    <input name="log_email" type="text" placeholder="Enter Email" style="border-radius: 50px; background: #fff; opacity:0.8;padding: 20px; width: 330px; height: 10px;">
+                    <br><br>
+                    <input name="log_password" type="password" placeholder="Enter Password" style="border-radius: 50px; background: #fff; opacity:0.8;padding: 20px; width: 330px; height: 10px;">
+                    <br><br>
+                    <input type="submit" value="Log In" style="background-color: #fff; opacity:0.7; color:#000000;">
+                </form>
+            </div>
+            <div id="signup" style="display: none; background-color: #000000; opacity:0.7; width:450px; height:250px; padding-top:40px;">
+                <form action="/signed">
+                    <input id="s_email" name="sign_email" type="text" placeholder="Enter Email">
+                    <br><br>
+                    <input id="s_password"  name="sign_password" type="password" placeholder="Enter Password">
+                    <br><br>
+                    <input id="s_button" type="submit" value="Sign Up" style="background-color: #fff; opacity:0.7; color:#000000;">
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
